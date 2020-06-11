@@ -6,17 +6,23 @@ export default function Main({ navigation }) {
 
     return (
       <View style={styles.container}>
-      <Text>HOME: Meu Aplicativo </Text>
+      <Text style={styles.titulo}>MEU PERFIL </Text>
       </View>
     );
 }
 
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-  }
+    container: {
+        flex: 1,
+        backgroundColor: '#333',
+        alignItems: 'center',
+        justifyContent:'center'
+      },
+      titulo: {
+        fontSize:20,
+        color:'white'
+      }
+    
 
 });
