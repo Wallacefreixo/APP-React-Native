@@ -2,9 +2,7 @@ import React, {Component} from 'react';
 import { StyleSheet, Text, View,Image, Alert } from 'react-native';
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
 
-export default class SignIn extends Component {
-  
-  render(){
+export default function SignIn({ navigation }) {
     return (
       <View style={styles.container}>
       <Image
@@ -15,13 +13,11 @@ export default class SignIn extends Component {
        <TextInput style={styles.input} placeholder="Digite sua senha" secureTextEntry={true}/>
       <TouchableOpacity
       style={styles.botao}
-      onPress={ ()=> { this.props.navigation.navigate('Main')}}>
+      onPress={ ()=> { navigation.navigate('Main')}}>
         <Text style={styles.textoBotao}>Login</Text>
       </TouchableOpacity>
       </View>
     );
-
-  }
 }
 
 const styles = StyleSheet.create({

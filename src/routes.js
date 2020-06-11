@@ -1,23 +1,20 @@
-import React, { Component } from 'react';
-import { createAppContainer } from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack'
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import React from "react";
 
 import SignIn from './pages/signIn';
 import Main from './pages/main';
 
-const Routes = createStackNavigator({
-  SignIn:{
-      screen: SignIn,
-      navigationOptions:{
-          header: null
-      }
-  },
-  Main:{
-    screen: Main,
-      navigationOptions:{
-          headerTitle: 'Main'
-      }
-  }
-});
+const Stack = createStackNavigator();
 
-export default createAppContainer(Routes);
+const Routes = () =>{
+    return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="SignIn">
+        <Stack.Screen name="SignIn" component={SignIn} />
+        <Stack.Screen name="Main" component={Main} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+export default Routes;
