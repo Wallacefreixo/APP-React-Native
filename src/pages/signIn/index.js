@@ -1,23 +1,27 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { StyleSheet, Text, View,Image, Alert } from 'react-native';
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-    <Image
-     source={require('./src/images/logo.jpg')}
-     style={styles.logo}
-     />
-     <TextInput style={styles.input} placeholder="Digite seu e-mail"/>
-     <TextInput style={styles.input} placeholder="Digite sua senha" secureTextEntry={true}/>
-    <TouchableOpacity
-    style={styles.botao}
-    onPress={ ()=> { this.props.navigation.navigate('Main')}}>
-      <Text style={styles.textoBotao}>Login</Text>
-    </TouchableOpacity>
-    </View>
-  );
+export default class SignIn extends Component {
+  
+  render(){
+    return (
+      <View style={styles.container}>
+      <Image
+       source={require('../../images/logo.jpg')}
+       style={styles.logo}
+       />
+       <TextInput style={styles.input} placeholder="Digite seu e-mail"/>
+       <TextInput style={styles.input} placeholder="Digite sua senha" secureTextEntry={true}/>
+      <TouchableOpacity
+      style={styles.botao}
+      onPress={ ()=> { this.props.navigation.navigate('Main')}}>
+        <Text style={styles.textoBotao}>Login</Text>
+      </TouchableOpacity>
+      </View>
+    );
+
+  }
 }
 
 const styles = StyleSheet.create({

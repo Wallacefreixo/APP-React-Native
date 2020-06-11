@@ -1,5 +1,6 @@
-import { createStackNavigator, createAppContainer } from 'react-navigation';
-import React from 'react';
+import React, { Component } from 'react';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack'
 
 import SignIn from './pages/signIn';
 import Main from './pages/main';
