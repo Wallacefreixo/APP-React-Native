@@ -1,27 +1,13 @@
-import React, {Component} from 'react';
-import { StyleSheet, Text, View,Image, Alert } from 'react-native';
-import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
+import React from 'react';
+import { Text, View } from 'react-native';
+import SafeView from '../../components/SafeView';
+import styles from './styles';
 
-export default function Main({ navigation }) {
+export default function Feed({ navigation }) {
 
-    return (
-      <View style={styles.container}>
+  return (
+    <SafeView style={styles.container}>
       <Text style={styles.titulo}>MEU FEED </Text>
-      </View>
-    );
+    </SafeView>
+  );
 }
-
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#FE486B',
-    alignItems: 'center',
-    justifyContent:'center'
-  },
-  titulo: {
-    fontSize:20,
-    color:'white'
-  }
-
-});

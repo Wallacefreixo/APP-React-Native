@@ -1,35 +1,29 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
+import Ionicons from '@expo/vector-icons/Ionicons';
+import IconWithBadge from './components/IconWithBadge';
 import React from "react";
 
-import SignIn from './pages/signIn';
-import SignOut from './pages/signOut';
+import Tabs from "./tabs.routes";
+import SignIn from './pages/auth/signIn';
+import SignUp from './pages/auth/signUp';
 import Feed from './pages/feed';
 import Profile from './pages/profile';
 
 const Stack = createStackNavigator();
-const Tab = createBottomTabNavigator();
 
-const Routes = () =>{
-    return (
+
+const Routes = () => {
+  return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="SignIn">
-        <Stack.Screen name="SignIn" component={SignIn}  options={{title: "Login"}} />
-        <Stack.Screen name="SignOut" component={SignOut}  options={{title: "Cadastro"}} />
-        <Stack.Screen name="Main" component={tabs}  options={{title: "Tinder"}}/>
+        <Stack.Screen name="SignIn" component={SignIn} options={{ title: "Login" }} />
+        <Stack.Screen name="SignUp" component={SignUp} options={{ title: "Cadastro" }} />
+        <Stack.Screen name="Main" component={Tabs} options={{ title: "Meu app" }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
 
-const tabs = () =>{
-    return(
-        <Tab.Navigator>
-          <Tab.Screen name="Feed" component={Feed} options={{title: "Feed"}} />
-          <Tab.Screen name="Profile" component={Profile} options={{title: "Perfil"}}/>
-        </Tab.Navigator>
-    )
-}
 export default Routes;
