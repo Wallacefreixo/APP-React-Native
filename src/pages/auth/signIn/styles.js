@@ -6,13 +6,21 @@ export default styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
+  content: {
+    width: '100%',
+    paddingLeft: 30,
+    paddingRight: 30,
+  },
+  titulo:{
+    fontSize: 30,
+    padding: 20,
+  },
   logo: {
     width: 200,
     height: 130,
     marginBottom: 20
   },
   input: {
-    width: 300,
     borderRadius: 10,
     marginBottom: 10,
     padding: 15,

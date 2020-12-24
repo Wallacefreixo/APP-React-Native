@@ -21,7 +21,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     height: 42,
-    paddingHorizontal: 30
   },
   button: {
     flex: 1,

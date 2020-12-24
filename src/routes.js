@@ -20,7 +20,7 @@ const Routes = () => {
       <Stack.Navigator initialRouteName="SignIn">
         <Stack.Screen name="SignIn" component={SignIn} options={{ title: "Login" }} />
         <Stack.Screen name="SignUp" component={SignUp} options={{ title: "Cadastro" }} />
-        <Stack.Screen name="Main" component={Tabs} options={{ title: "Meu app" }} />
+        <Stack.Screen name="Main" component={Tabs} options={{ title: "Hobbies" }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
