@@ -13,7 +13,7 @@ const Routes = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="SignIn">
-        <Stack.Screen name="Welcome" component={Welcome} options={{headerShown: false}} />
+        <Stack.Screen name="Welcome" component={Welcome} options={{headerShown: true}} />
         <Stack.Screen name="SignIn" component={SignIn} options={{headerShown: false}} />
         <Stack.Screen name="SignUp" component={SignUp} options={{headerShown: true}} />
         <Stack.Screen name="Main" component={Tabs} options={{headerShown: true}}/>

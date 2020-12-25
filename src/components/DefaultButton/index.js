@@ -5,9 +5,9 @@ function DefaultButton(props) {
   return (
     <View style={styles.container}>
       <TouchableOpacity
-        style={styles.button}
+        style={props.color == 'purple' ? styles.btnPurple : styles.btnWhite}
         onPress={props.onPress}>
-        <Text style={styles.text}>{props.children}</Text>
+        <Text style={props.color == 'purple' ? styles.txtPurple : styles.txtWhite} >{props.children}</Text>
       </TouchableOpacity>
     </View>
   )
@@ -22,17 +22,30 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     height: 42,
   },
-  button: {
+  btnPurple: {
     flex: 1,
-    paddingVertical: 10,
+    height: 50,
+    borderRadius: 50,
+    alignItems: 'center',
+    justifyContent: "center",
+    backgroundColor: "#8B31B3",
+  },
+  btnWhite:{
+    flex: 1,
     borderRadius: 10,
     alignItems: 'center',
     justifyContent: "center",
-    backgroundColor: "#FE486B",
+    backgroundColor: "#fff",
   },
-  text: {
-    color: "white",
+  txtPurple:{
+    color: "#fff",
     fontSize: 20,
     fontWeight: "bold"
   },
+  txtWhite:{
+    color: "#8B31B3",
+    fontSize: 20,
+    fontWeight: "bold"
+  }
+  
 })

@@ -7,7 +7,11 @@ export default function Welcome({ navigation }) {
 
   return (
     <SafeView style={styles.container}>
-      <Text style={styles.titulo}>MEU FEED </Text>
+         {/* <Image
+          source={require('../../../images/logo.jpg')}
+          style={styles.logo}
+        /> */}
+      <Text style={styles.titulo}>WELCOME </Text>
     </SafeView>
   );
 }

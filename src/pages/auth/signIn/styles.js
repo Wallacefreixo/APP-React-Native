@@ -1,49 +1,64 @@
 import { StyleSheet } from 'react-native';
 export default styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
+    flex:1,
+    backgroundColor: '#A958D2',
   },
   content: {
+    flex:2,
     width: '100%',
     paddingLeft: 30,
     paddingRight: 30,
+    marginTop:40,
+  },
+  icon:{
+    margin:20,
   },
   titulo:{
-    fontSize: 30,
-    padding: 20,
-  },
-  logo: {
-    width: 200,
-    height: 130,
-    marginBottom: 20
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 35,
+    paddingBottom: 30,
   },
   input: {
-    borderRadius: 10,
-    marginBottom: 10,
-    padding: 15,
-    color: "#FE486B",
-    backgroundColor: "#E7E7E8",
+    position: 'relative',
+    borderRadius: 50,
+    borderWidth: 1,
+    borderColor: '#fff',
+    marginBottom: 15,
+    padding: 18,
+    paddingLeft: 45,
+    color: "#fff",
     fontSize: 16,
+  },
+  iconInput:{
+    position: 'absolute',
+    top: 18,
+    left: 20,
   },
   error: {
-    color: "#000",
+    color: "#fff",
     fontSize: 16,
     paddingBottom: 20,
-    width: 300,
+    paddingLeft: 8,
   },
-  botaoCadastro: {
-    width: 300,
-    height: 42,
-    borderRadius: 10,
+  forgetPassword:{
+    alignItems:'flex-end',
+    paddingTop: 20,
+    paddingRight: 10,
+  },
+  txtforgetPassword:{
+    fontSize: 15,
+    color: "#fff",
+  },
+  bannerCadastrar: {
+    backgroundColor: '#A133B1',
+    height: 60,
     alignItems: 'center',
     justifyContent: "center",
   },
-  textoBotaoCadastro: {
-    color: "#333",
+  txtbannerCadastrar: {
+    color: "#fff",
     fontSize: 16
-
   }
 });
