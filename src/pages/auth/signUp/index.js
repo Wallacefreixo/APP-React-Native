@@ -6,27 +6,27 @@ import styles from './styles';
 import DefaultButton from '../../../components/DefaultButton';
 import { connect } from 'react-redux';
 import { 
-      modificaUsuario, 
+      modificaNome, 
       modificaEmail, 
       modificaSenha,
       cadastraUsuario
-} from '../../../actions/usuarioActions';
+} from '../../../actions/authActions';
 
 const SignUp = props => {
 
   cadastrar = () => {
-    const { usuario, email, senha, navigation } = props
-    props.cadastraUsuario({ usuario, email, senha, navigation})
+    const { nome, email, senha, navigation } = props
+    props.cadastraUsuario({ nome, email, senha, navigation})
   };
 
   return (
     <SafeView style={styles.container}>
       <View style={styles.content}>
           <TextInput 
-            value={props.usuario} 
+            value={props.nome} 
             style={styles.input} 
-            onChangeText={usuario => props.modificaUsuario(usuario)} 
-            placeholder="Usuário" 
+            onChangeText={nome => props.modificaNome(nome)} 
+            placeholder="Nome" 
           />
           <TextInput 
             value={props.email} 
@@ -41,7 +41,7 @@ const SignUp = props => {
             placeholder="Senha" secureTextEntry={true}
           />
          <Text style={styles.error} >{props.errorCadastro}</Text>
-         <DefaultButton onPress={() => { cadastrar() }}>Cadastrar</DefaultButton>
+         <DefaultButton onPress={ () => cadastrar() }>Cadastrar</DefaultButton>
       </View>
       {/* <DefaultButton onPress={() => { props.navigation.navigate('SignIn') }}>Cadastrar</DefaultButton> */}
     </SafeView>
@@ -50,16 +50,16 @@ const SignUp = props => {
 
 const mapStateToProps = state => (
   {
-    usuario: state.usuarioReducer.usuario,
-    email: state.usuarioReducer.email,
-    senha: state.usuarioReducer.senha,
-    errorCadastro: state.usuarioReducer.errorCadastro
+    nome: state.authReducer.nome,
+    email: state.authReducer.email,
+    senha: state.authReducer.senha,
+    errorCadastro: state.authReducer.errorCadastro
   }
 )
 
 export default connect(mapStateToProps, 
   {
-  modificaUsuario, 
+  modificaNome, 
   modificaEmail,
   modificaSenha,
   cadastraUsuario 

@@ -5,9 +5,16 @@ import SafeView from '../../../components/SafeView';
 import styles from './styles';
 import DefaultButton from '../../../components/DefaultButton';
 import { connect } from 'react-redux';
-import { modificaUsuario , modificaSenha } from '../../../actions/usuarioActions';
+import { modificaEmail , modificaSenha, autenticaUsuario } from '../../../actions/authActions';
 
 const SignIn = props => {
+
+  autenticar = () =>{
+    // props.navigation.navigate('Main')//VERSÃO DESENVOLVIMENTO
+    const { email, senha, navigation } = props
+    props.autenticaUsuario({ email, senha, navigation })
+  }
+
   return (
     <SafeView style={styles.container}>
         {/* <Image
@@ -17,10 +24,10 @@ const SignIn = props => {
       <View style={styles.content}>
         <Text style={styles.titulo}>HOBBIES</Text>
         <TextInput
-          value={props.usuario} 
+          value={props.email} 
           style={styles.input} 
-          placeholder="Usuário" 
-          onChangeText={usuario => props.modificaUsuario(usuario)} 
+          placeholder="E-mail" 
+          onChangeText={email => props.modificaEmail(email)} 
         />
         <TextInput 
           value={props.senha} 
@@ -29,7 +36,8 @@ const SignIn = props => {
           onChangeText={senha => props.modificaSenha(senha)} 
           secureTextEntry={true} 
         />
-        <DefaultButton onPress={() => { props.navigation.navigate('Main') }}>Login</DefaultButton>
+         <Text style={styles.error}>{props.errorLogin}</Text>
+        <DefaultButton onPress={() => autenticar() }>Login</DefaultButton>
         <TouchableOpacity
           style={styles.botaoCadastro}
           onPress={() => { props.navigation.navigate('SignUp') }}>
@@ -42,14 +50,16 @@ const SignIn = props => {
 
 const mapStateToProps = state => (
   {
-    usuario: state.usuarioReducer.usuario,
-    senha: state.usuarioReducer.senha
+    email: state.authReducer.email,
+    senha: state.authReducer.senha,
+    errorLogin: state.authReducer.errorLogin
   }
 )
 
 export default connect(mapStateToProps, 
   {
-    modificaUsuario,
-    modificaSenha
+    modificaEmail,
+    modificaSenha,
+    autenticaUsuario
   }
 )(SignIn)

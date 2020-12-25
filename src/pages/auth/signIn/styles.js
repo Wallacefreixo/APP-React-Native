@@ -28,6 +28,12 @@ export default styles = StyleSheet.create({
     backgroundColor: "#E7E7E8",
     fontSize: 16,
   },
+  error: {
+    color: "#000",
+    fontSize: 16,
+    paddingBottom: 20,
+    width: 300,
+  },
   botaoCadastro: {
     width: 300,
     height: 42,
