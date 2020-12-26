@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Text, View } from 'react-native';
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
 import SafeView from '../../../components/SafeView';
 import styles from './styles';
 import DefaultButton from '../../../components/DefaultButton';
 import { connect } from 'react-redux';
-import { modificaEmail , modificaSenha, autenticaUsuario } from '../../../actions/authActions';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { modificaEmail , modificaSenha, autenticaUsuario } from '../../../actions/authActions';
 
 const SignIn = props => {
+
+  const [visiblePassword, setVisiblePassword] = useState(false);
 
   autenticar = () =>{
     // props.navigation.navigate('Main')//VERSÃO DESENVOLVIMENTO
@@ -20,12 +22,13 @@ const SignIn = props => {
     <SafeView style={styles.container}>
       <TouchableOpacity
         style={styles.icon}
-        onPress={() => { props.navigation.navigate('Welcome') }}>
+        onPress={() => {  props.navigation.goBack() }}>
          <Ionicons name="ios-arrow-back" size={40} color="#fff" /> 
       </TouchableOpacity>
       <View style={styles.content}>
         <Text style={styles.titulo}>LOGIN</Text>
         <View>
+          <Ionicons style={styles.iconInput} name="ios-mail" size={20} color="#fff" /> 
           <TextInput
             value={props.email} 
             style={styles.input} 
@@ -33,24 +36,29 @@ const SignIn = props => {
             placeholderTextColor="#fff"
             onChangeText={email => props.modificaEmail(email)} 
           />
-         <Ionicons style={styles.iconInput} name="ios-mail" size={20} color="#fff" /> 
         </View>
         <View>
+          <Ionicons style={styles.iconInput} name="ios-lock" size={20} color="#fff" /> 
           <TextInput 
             value={props.senha} 
             style={styles.input} 
             placeholder="Senha" 
             placeholderTextColor="#fff" 
             onChangeText={senha => props.modificaSenha(senha)} 
-            secureTextEntry={true} 
+            secureTextEntry={!visiblePassword ? true : false} 
           />
-          <Ionicons style={styles.iconInput} name="ios-lock" size={20} color="#fff" /> 
+          <View style={styles.iconVisiblePassword}>
+            <TouchableOpacity
+              onPress={() => { setVisiblePassword(!visiblePassword) }}>
+              <Ionicons  name={!visiblePassword ? 'ios-eye-off' : 'ios-eye'} size={20} color="#fff" /> 
+            </TouchableOpacity>
+          </View>
         </View> 
         <Text style={styles.error}>{props.errorLogin}</Text> 
         <DefaultButton color="purple" onPress={() => autenticar() }>Login</DefaultButton>
         <TouchableOpacity
           style={styles.forgetPassword}
-          onPress={() => { props.navigation.navigate('SignUp') }}>
+          onPress={() => {  }}>
           <Text style={styles.txtforgetPassword}>Esqueceu sua senha?</Text>
         </TouchableOpacity>
       </View>

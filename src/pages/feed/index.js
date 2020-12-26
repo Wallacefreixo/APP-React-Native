@@ -1,5 +1,6 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import SafeView from '../../components/SafeView';
 import styles from './styles';
 
@@ -7,7 +8,11 @@ export default function Feed({ navigation }) {
 
   return (
     <SafeView style={styles.container}>
-      <Text style={styles.titulo}>MEU FEED </Text>
+       <TouchableOpacity
+        style={styles.icon}
+        onPress={() => { navigation.navigate('Welcome') }}>
+        <Text style={styles.titulo}>CLIQUE PARA SAIR</Text>
+      </TouchableOpacity>
     </SafeView>
   );
 }
