@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   container: {
     flex:1,
-    backgroundColor: '#A958D2',
+    backgroundColor: '#5D41AF',
   },
   content: {
     flex:2,
@@ -37,6 +37,11 @@ const styles = StyleSheet.create({
     top: 18,
     left: 20,
   },
+  iconVisiblePassword:{
+    position: 'absolute',
+    top: 18,
+    right: 20,
+  },
   error: {
     color: "#fff",
     fontSize: 16,
@@ -53,7 +58,7 @@ const styles = StyleSheet.create({
     color: "#fff",
   },
   bannerCadastrar: {
-    backgroundColor: '#A133B1',
+    backgroundColor: '#3B2675',
     height: 60,
     alignItems: 'center',
     justifyContent: "center",

@@ -2,16 +2,23 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import SafeView from '../../components/SafeView';
 import styles from './styles';
+import DefaultButton from '../../components/DefaultButton';
 
 export default function Welcome({ navigation }) {
 
   return (
     <SafeView style={styles.container}>
-         {/* <Image
-          source={require('../../../images/logo.jpg')}
-          style={styles.logo}
-        /> */}
-      <Text style={styles.titulo}>WELCOME </Text>
+      <View style={styles.content}>
+        {/* <Image
+              source={require('../../../images/logo.jpg')}
+              style={styles.logo}
+          <View style={styles.content}>
+          /> */}
+        <Text style={styles.titulo}>HOBBIES</Text>
+        <Text style={styles.descricao}>Conecte gostos em comuns com pessoas ao redor do mundo</Text>
+        <DefaultButton style={styles.margin} color="purple" marginBottom="true" onPress={ () =>  navigation.navigate('SignIn')  }>EXPLORAR</DefaultButton>
+        <DefaultButton color="white" onPress={ () =>  navigation.navigate('SignUp')  }>COMEÇAR</DefaultButton>
+      </View>
     </SafeView>
   );
 }

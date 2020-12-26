@@ -1,14 +1,12 @@
-import styled from 'styled-components/native';
-import { Text, View } from 'react-native';
-
-export const Container = styled.View`
-    flex: 1;
-    background-color: #FE486B;
-    align-items: center;
-    justify-content: center;
-`;
-
-export const Titulo = styled.Text`
-    font-size: 20px;
-    color: white;
-`;
+import { StyleSheet } from 'react-native';
+export default styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  titulo: {
+    fontSize: 20,
+  },
+});

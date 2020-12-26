@@ -2,8 +2,9 @@ import React from 'react';
 import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
 
 function DefaultButton(props) {
+  console.log(props)
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, props.marginBottom == 'true' ? styles.marginBottom : '' ]}>
       <TouchableOpacity
         style={props.color == 'purple' ? styles.btnPurple : styles.btnWhite}
         onPress={props.onPress}>
@@ -20,7 +21,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    height: 42,
   },
   btnPurple: {
     flex: 1,
@@ -28,11 +28,12 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     alignItems: 'center',
     justifyContent: "center",
-    backgroundColor: "#8B31B3",
+    backgroundColor: "#4898DD",
   },
   btnWhite:{
     flex: 1,
-    borderRadius: 10,
+    borderRadius: 50,
+    height: 50,
     alignItems: 'center',
     justifyContent: "center",
     backgroundColor: "#fff",
@@ -43,9 +44,12 @@ const styles = StyleSheet.create({
     fontWeight: "bold"
   },
   txtWhite:{
-    color: "#8B31B3",
+    color: "#4898DD",
     fontSize: 20,
     fontWeight: "bold"
-  }
+  },
+  marginBottom: {
+    marginBottom: 20,
+  },
   
 })

@@ -2,9 +2,10 @@ import React from 'react';
 import { Container, Titulo } from './styles';
 
 export default function Profile({ navigation }) {
-	return (
-		<Container>
-			<Titulo>MEU PERFIL </Titulo>
-		</Container>
-	);
+
+  return (
+    <SafeView style={styles.container}>
+      <Text style={styles.titulo}>PERFIL</Text>
+    </SafeView>
+  );
 }
