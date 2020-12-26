@@ -7,8 +7,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  content: {
+    width: '100%',
+    paddingLeft: 30,
+    paddingRight: 30,
+  },
   input: {
-    width: 300,
     borderRadius: 10,
     marginBottom: 10,
     padding: 15,
@@ -16,19 +20,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#E7E7E8",
     fontSize: 16,
   },
-  botaoCadastro: {
+  error: {
+    color: "#000",
+    fontSize: 16,
+    paddingBottom: 20,
     width: 300,
-    height: 42,
-    borderRadius: 10,
-    alignItems: 'center',
-    justifyContent: "center",
-    backgroundColor: "#FE486B",
-  },
-  textoBotaoCadastro: {
-    color: "white",
-    fontSize: 20,
-    fontWeight: "bold"
-
   }
 });
 
