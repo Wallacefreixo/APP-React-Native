@@ -1,13 +1,13 @@
 import React from 'react';
-import { Container, Titulo } from './styles';
 import SafeView from '../../components/SafeView';
-import { Text, View } from 'react-native';
+import { Content } from '../../components/Content/style.js';
 
-export default function Profile({ navigation }) {
-
+function Profile({ navigation }) {
   return (
     <SafeView centered colored>
-      <Text style={styles.titulo}>PERFIL</Text>
+      <Content>PERFIL</Content>
     </SafeView>
   );
-}
+};
+
+export default Profile;

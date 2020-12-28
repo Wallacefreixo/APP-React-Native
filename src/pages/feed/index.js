@@ -1,18 +1,15 @@
 import React from 'react';
-import { Text } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import SafeView from '../../components/SafeView';
-import styles from './styles';
+import DefaultButton from '../../components/DefaultButton';
 
-export default function Feed({ navigation }) {
-
+function Feed({ navigation }) {
   return (
     <SafeView centered>
-       <TouchableOpacity
-        style={styles.icon}
-        onPress={() => { navigation.navigate('Welcome') }}>
-        <Text style={styles.titulo}>CLIQUE PARA SAIR</Text>
-      </TouchableOpacity>
+      <DefaultButton onPress={() => { navigation.navigate('Welcome') }}>
+        CLIQUE PARA SAIR
+      </DefaultButton>
     </SafeView>
   );
-}
+};
+
+export default Feed;

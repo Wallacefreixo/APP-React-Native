@@ -1,13 +1,13 @@
 import React from 'react';
-import { Text, View } from 'react-native';
 import SafeView from '../../components/SafeView';
-import styles from './styles';
+import { Content } from '../../components/Content/style.js';
 
-export default function Message({ navigation }) {
-
+function Message({ navigation }) {
   return (
     <SafeView centered>
-      <Text style={styles.titulo}>Message</Text>
+      <Content>Message</Content>
     </SafeView>
   );
-}
+};
+
+export default Message;
