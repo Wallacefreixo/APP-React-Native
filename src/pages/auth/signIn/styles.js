@@ -1,17 +1,6 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  container: {
-    flex:1,
-    backgroundColor: '#5D41AF',
-  },
-  content: {
-    flex:2,
-    width: '100%',
-    paddingLeft: 30,
-    paddingRight: 30,
-    marginTop:40,
-  },
   icon:{
     margin:20,
   },

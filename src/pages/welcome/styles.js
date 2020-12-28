@@ -1,15 +1,5 @@
 import { StyleSheet } from 'react-native';
 export default styles = StyleSheet.create({
-  container: {
-    flex:1,
-    backgroundColor: '#5D41AF',
-  },
-  content: {
-    paddingLeft: 30,
-    paddingRight: 30,
-    marginTop: 120,
-    alignItems: 'center',
-  },
   titulo:{
     color: '#fff',
     alignItems: 'center',
