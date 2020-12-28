@@ -55,7 +55,7 @@ const SignIn = props => {
           </View>
         </View> 
         <Text style={styles.error}>{props.errorLogin}</Text> 
-        <DefaultButton color="purple" onPress={() => autenticar() }>Login</DefaultButton>
+        <DefaultButton colored onPress={() => autenticar() }>Login</DefaultButton>
         <TouchableOpacity
           style={styles.forgetPassword}
           onPress={() => {  }}>

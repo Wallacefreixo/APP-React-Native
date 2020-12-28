@@ -70,7 +70,7 @@ const SignUp = props => {
           </View>
         </View> 
         <Text style={styles.error}>{props.errorCadastro}</Text> 
-        <DefaultButton color="purple" onPress={ () => cadastrar() }>Cadastrar</DefaultButton>
+        <DefaultButton colored onPress={ () => cadastrar() }>Cadastrar</DefaultButton>
         <TouchableOpacity
           style={styles.haveAccount}
           onPress={() => { props.navigation.navigate('SignIn') }}>

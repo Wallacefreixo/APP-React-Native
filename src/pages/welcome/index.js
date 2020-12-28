@@ -16,8 +16,8 @@ export default function Welcome({ navigation }) {
           /> */}
         <Text style={styles.titulo}>HOBBIES</Text>
         <Text style={styles.descricao}>Conecte gostos em comuns com pessoas ao redor do mundo</Text>
-        <DefaultButton style={styles.margin} color="purple" marginBottom="true" onPress={ () =>  navigation.navigate('SignIn')  }>EXPLORAR</DefaultButton>
-        <DefaultButton color="white" onPress={ () =>  navigation.navigate('SignUp')  }>COMEÇAR</DefaultButton>
+        <DefaultButton colored marginBottom onPress={ () =>  navigation.navigate('SignIn')  }>EXPLORAR</DefaultButton>
+        <DefaultButton onPress={ () =>  navigation.navigate('SignUp')  }>COMEÇAR</DefaultButton>
       </View>
     </SafeView>
   );
