@@ -1,12 +1,12 @@
 import React from 'react';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { MainWrapper, CenteredWrapper } from './style.js';
 
 function SafeView(props) {
-  return (
-    <SafeAreaView style={[{ flex: 1 }, props.style]}>
-      {props.children}
-    </SafeAreaView>
-  );
-}
+	return (
+		<MainWrapper colored={ props.colored }>
+			{ props.children }
+		</MainWrapper>
+	);
+};
 
 export default SafeView;
