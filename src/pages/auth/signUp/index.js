@@ -1,18 +1,17 @@
 import React, {useState} from 'react';
-import { Text, View } from 'react-native';
-import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
-import SafeView from '../../../components/SafeView';
-import styles from './styles';
-import DefaultButton from '../../../components/DefaultButton';
+import { View } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { connect } from 'react-redux';
-import { 
-      modificaNome, 
-      modificaEmail, 
-      modificaSenha,
-      cadastraUsuario
-} from '../../../actions/authActions';
+import { connect } from 'react-redux';;
+
+import { modificaNome, modificaEmail, modificaSenha, cadastraUsuario } from '../../../actions/authActions';
+
+import SafeView from '../../../components/SafeView';
+import { Title } from '../../../components/Content/style.js';
+import DefaultButton from '../../../components/DefaultButton';
 import { FlexWrapper } from '../../../components/PageWrapper/style.js';
+
+import { Icon, Input, IconInput, IconVisiblePassword, Error, HaveAccount, TxtHaveAccount } from './style.js';
 
 const SignUp = props => {
 
@@ -25,58 +24,46 @@ const SignUp = props => {
 
   return (
     <SafeView colored>
-      <TouchableOpacity
-        style={styles.icon}
-        onPress={() => { props.navigation.goBack() }}>
+      <Icon onPress={() => { props.navigation.goBack() }}>
         <Ionicons name="ios-arrow-back" size={40} color="#fff" /> 
-      </TouchableOpacity>
+      </Icon>
       <FlexWrapper marginTop='40px'>
-        <Text style={styles.titulo}>CADASTRAR</Text>
+        <Title>CADASTRAR</Title>
         <View>
-          <Ionicons style={styles.iconInput} name="ios-person" size={20} color="#fff" /> 
-          <TextInput 
-                value={props.nome} 
-                style={styles.input} 
+          <IconInput name="ios-person" size={20} color="#fff" /> 
+          <Input value={props.nome}  
                 onChangeText={nome => props.modificaNome(nome)} 
                 placeholder="Nome" 
-                placeholderTextColor="#fff"
-              />
+                placeholderTextColor="#fff" />
         </View>
         
         <View>
-          <Ionicons style={styles.iconInput} name="ios-mail" size={20} color="#fff" /> 
-          <TextInput
-            value={props.email} 
-            style={styles.input} 
+          <IconInput name="ios-mail" size={20} color="#fff" /> 
+          <Input value={props.email} 
             placeholder="E-mail" 
             placeholderTextColor="#fff"
             onChangeText={email => props.modificaEmail(email)} 
           />
         </View>
         <View>
-          <Ionicons style={styles.iconInput} name="ios-lock" size={20} color="#fff" /> 
-          <TextInput 
-            value={props.senha} 
-            style={styles.input} 
+          <IconInput name="ios-lock" size={20} color="#fff" /> 
+          <Input value={props.senha} 
             placeholder="Senha" 
             placeholderTextColor="#fff" 
             onChangeText={senha => props.modificaSenha(senha)} 
             secureTextEntry={!visiblePassword ? true : false} 
           />
-          <View style={styles.iconVisiblePassword}>
-            <TouchableOpacity
-              onPress={() => { setVisiblePassword(!visiblePassword) }}>
+          <IconVisiblePassword>
+            <TouchableOpacity onPress={() => { setVisiblePassword(!visiblePassword) }}>
               <Ionicons  name={!visiblePassword ? 'ios-eye-off' : 'ios-eye'} size={20} color="#fff" /> 
             </TouchableOpacity>
-          </View>
+          </IconVisiblePassword>
         </View> 
-        <Text style={styles.error}>{props.errorCadastro}</Text> 
+        <Error>{props.errorCadastro}</Error> 
         <DefaultButton colored onPress={ () => cadastrar() }>Cadastrar</DefaultButton>
-        <TouchableOpacity
-          style={styles.haveAccount}
-          onPress={() => { props.navigation.navigate('SignIn') }}>
-          <Text style={styles.txthaveAccount}>Já tem uma conta?</Text>
-        </TouchableOpacity>
+        <HaveAccount onPress={() => { props.navigation.navigate('SignIn') }}>
+          <TxtHaveAccount>Já tem uma conta?</TxtHaveAccount>
+        </HaveAccount>
       </FlexWrapper>
     </SafeView>
   );
