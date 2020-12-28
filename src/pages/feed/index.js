@@ -7,7 +7,7 @@ import styles from './styles';
 export default function Feed({ navigation }) {
 
   return (
-    <SafeView style={styles.container}>
+    <SafeView centered>
        <TouchableOpacity
         style={styles.icon}
         onPress={() => { navigation.navigate('Welcome') }}>

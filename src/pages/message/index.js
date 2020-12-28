@@ -6,7 +6,7 @@ import styles from './styles';
 export default function Message({ navigation }) {
 
   return (
-    <SafeView style={styles.container}>
+    <SafeView centered>
       <Text style={styles.titulo}>Message</Text>
     </SafeView>
   );
