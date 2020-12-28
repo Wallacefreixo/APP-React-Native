@@ -1,6 +1,6 @@
 import React from 'react-native';
 import { View } from 'react-native';
-import { InputIcon, InputField } from './style.js';
+import { InputField } from './style.js';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 function UserInput(props) {
