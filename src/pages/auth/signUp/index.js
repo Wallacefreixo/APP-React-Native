@@ -12,6 +12,7 @@ import {
       modificaSenha,
       cadastraUsuario
 } from '../../../actions/authActions';
+import { FlexWrapper } from '../../../components/PageWrapper/style.js';
 
 const SignUp = props => {
 
@@ -29,7 +30,7 @@ const SignUp = props => {
         onPress={() => { props.navigation.goBack() }}>
         <Ionicons name="ios-arrow-back" size={40} color="#fff" /> 
       </TouchableOpacity>
-      <View style={styles.content}>
+      <FlexWrapper marginTop='40px'>
         <Text style={styles.titulo}>CADASTRAR</Text>
         <View>
           <Ionicons style={styles.iconInput} name="ios-person" size={20} color="#fff" /> 
@@ -76,7 +77,7 @@ const SignUp = props => {
           onPress={() => { props.navigation.navigate('SignIn') }}>
           <Text style={styles.txthaveAccount}>Já tem uma conta?</Text>
         </TouchableOpacity>
-      </View>
+      </FlexWrapper>
     </SafeView>
   );
 }

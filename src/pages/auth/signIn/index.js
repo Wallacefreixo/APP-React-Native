@@ -7,6 +7,7 @@ import DefaultButton from '../../../components/DefaultButton';
 import { connect } from 'react-redux';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { modificaEmail , modificaSenha, autenticaUsuario } from '../../../actions/authActions';
+import { FlexWrapper } from '../../../components/PageWrapper/style.js';
 
 const SignIn = props => {
 
@@ -25,7 +26,7 @@ const SignIn = props => {
         onPress={() => {  props.navigation.goBack() }}>
          <Ionicons name="ios-arrow-back" size={40} color="#fff" /> 
       </TouchableOpacity>
-      <View style={styles.content}>
+      <FlexWrapper marginTop='40px'>
         <Text style={styles.titulo}>LOGIN</Text>
         <View>
           <Ionicons style={styles.iconInput} name="ios-mail" size={20} color="#fff" /> 
@@ -61,7 +62,7 @@ const SignIn = props => {
           onPress={() => {  }}>
           <Text style={styles.txtforgetPassword}>Esqueceu sua senha?</Text>
         </TouchableOpacity>
-      </View>
+      </FlexWrapper>
       <TouchableOpacity
         style={styles.bannerCadastrar}
         onPress={() => { props.navigation.navigate('SignUp') }}>
