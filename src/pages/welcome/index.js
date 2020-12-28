@@ -7,7 +7,7 @@ import DefaultButton from '../../components/DefaultButton';
 export default function Welcome({ navigation }) {
 
   return (
-    <SafeView style={styles.container}>
+    <SafeView colored>
       <View style={styles.content}>
         {/* <Image
               source={require('../../../images/logo.jpg')}

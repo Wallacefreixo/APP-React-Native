@@ -23,7 +23,7 @@ const SignUp = props => {
   };
 
   return (
-    <SafeView style={styles.container}>
+    <SafeView colored>
       <TouchableOpacity
         style={styles.icon}
         onPress={() => { props.navigation.goBack() }}>
