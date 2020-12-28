@@ -11,7 +11,7 @@ import { Title } from '../../../components/Content/style.js';
 import DefaultButton from '../../../components/DefaultButton';
 import { FlexWrapper } from '../../../components/PageWrapper/style.js';
 
-import { Icon, Input, IconInput, IconVisiblePassword, Error, HaveAccount, TxtHaveAccount } from './style.js';
+import { Icon, Input, IconInput, IconVisiblePassword, Error, HaveAccount, TxtHaveAccount } from '../../../components/SignUp/style.js';
 
 const SignUp = props => {
 

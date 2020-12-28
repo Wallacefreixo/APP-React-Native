@@ -20,7 +20,7 @@ import {
   TxtForgetPassword,
   TxtBannerCadastrar,
   Error
-} from './style.js'
+} from '../../../components/SignIn/style.js'
 
 const SignIn = props => {
 
