@@ -1,13 +1,15 @@
 import React from 'react';
-import { Text, View } from 'react-native';
 import SafeView from '../../components/SafeView';
-import styles from './styles';
+import DefaultButton from '../../components/DefaultButton';
 
-export default function Feed({ navigation }) {
-
+function Feed({ navigation }) {
   return (
-    <SafeView style={styles.container}>
-      <Text style={styles.titulo}>MEU FEED </Text>
+    <SafeView centered>
+      <DefaultButton onPress={() => { navigation.navigate('Welcome') }}>
+        CLIQUE PARA SAIR
+      </DefaultButton>
     </SafeView>
   );
-}
+};
+
+export default Feed;

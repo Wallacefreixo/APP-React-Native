@@ -6,6 +6,7 @@ import IconWithBadge from './components/IconWithBadge';
 import React from "react";
 
 import Feed from './pages/feed';
+import Message from './pages/message';
 import Profile from './pages/profile';
 
 const Tab = createBottomTabNavigator();
@@ -24,12 +25,19 @@ const Tabs = () => {
 
           if (route.name === 'Feed') {
             iconName = focused
-              ? 'ios-information-circle'
-              : 'ios-information-circle-outline';
+              ? 'md-globe'
+              : 'md-globe';
+            return <Ionicons name={iconName} size={size} color={color} />;
+          }
+          else if (route.name === 'Message') {
+            iconName = focused
+              ? 'ios-chatbubbles'
+              : 'ios-chatbubbles';
             return <FeedIconWithBadge name={iconName} size={size} color={color} />;
 
-          } else if (route.name === 'Profile') {
-            iconName = focused ? 'ios-list-box' : 'ios-list';
+          }
+          else if (route.name === 'Profile') {
+            iconName = focused ? 'ios-contact' : 'ios-contact';
           }
 
           // You can return any component that you like here!
@@ -37,10 +45,11 @@ const Tabs = () => {
         }
       })}
       tabBarOptions={{
-        activeTintColor: 'tomato',
+        activeTintColor: '#0DD0E2',
         inactiveTintColor: 'gray',
       }}>
       <Tab.Screen name="Feed" component={Feed} options={{ title: "Feed" }} />
+      <Tab.Screen name="Message" component={Message} options={{ title: "Mensagem" }} />
       <Tab.Screen name="Profile" component={Profile} options={{ title: "Perfil" }} />
     </Tab.Navigator>
   )
