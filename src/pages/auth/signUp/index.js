@@ -41,7 +41,7 @@ const SignUp = props => {
             onChangeText={email => props.modificaEmail(email)} />
 
         <UserInput value={props.email}
-            iconSet={["ios-lock", 20, "#fff"]}
+            iconSet={["ios-lock-closed", 20, "#fff"]}
             placeholder="Senha"
             onChangeText={senha => props.modificaSenha(senha)}>
             <IconVisiblePassword>

@@ -5,7 +5,7 @@ import { createStore, applyMiddleware } from 'redux';
 import firebase from 'firebase';
 import ReduxThunk from 'redux-thunk'; //transform function async in sync for promises firebase
 import { ThemeProvider } from "styled-components";
-import StatusBarDefault from './src/components/StatusBarDefault'
+import { StatusBar } from 'expo-status-bar';
 
 import Routes from "./src/routes";
 import reducers from './src/reducers';
@@ -30,7 +30,7 @@ export default App = () => {
   return(
     <ThemeProvider theme={hobbiesBlue}>
       <SafeAreaProvider>
-        <StatusBarDefault/>
+        <StatusBar />
         <Provider store={createStore(reducers, {}, applyMiddleware(ReduxThunk))}>
           <Routes />
         </Provider>

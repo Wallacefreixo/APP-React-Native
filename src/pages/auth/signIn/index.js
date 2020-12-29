@@ -32,7 +32,7 @@ const SignIn = props => {
     // const { email, senha, navigation } = props
     // props.autenticaUsuario({ email, senha, navigation })
   }
-
+  
   return (
     <SafeView colored>
       <Icon onPress={() => {  props.navigation.goBack() }}>
@@ -45,7 +45,7 @@ const SignIn = props => {
             placeholder="E-mail"
             onChangeText={email => props.modificaEmail(email)} />
         <UserInput value={props.email}
-            iconSet={["ios-lock", 20, "#fff"]}
+            iconSet={["ios-lock-closed", 20, "#fff"]}
             placeholder="Senha"
             onChangeText={senha => props.modificaSenha(senha)}>
             <IconVisiblePassword>

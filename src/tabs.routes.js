@@ -37,7 +37,7 @@ const Tabs = () => {
 
           }
           else if (route.name === 'Profile') {
-            iconName = focused ? 'ios-contact' : 'ios-contact';
+            iconName = focused ? 'person' : 'person';
           }
 
           // You can return any component that you like here!

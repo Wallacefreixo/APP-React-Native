@@ -32,3 +32,7 @@ yarn start
 	* Rocketseat ReactJS - snippets
 	* Rocketseat ReactNative - snippets
 	* Material Icon Theme - visual
+
+## Links úteis
+	* [documentação expo SDK40](https://docs.expo.io/versions/latest/)
+	* [icones @expo/vector-icons@12.0.2](https://icons.expo.fyi/)
