@@ -12,7 +12,7 @@ export const Input = styled.TextInput`
   padding: 18px;
   padding-left: 45px;
   color: #fff;
-  font-size: 16px;
+  font-size: ${props => props.theme.typo.size.small};
 `;
 
 export const IconInput = styled(Ionicons)`
@@ -38,25 +38,25 @@ export const ForgetPassword = styled.TouchableOpacity`
 `;
 
 export const BannerCadastrar = styled.TouchableOpacity`
-  background-color: #3B2675;
+  background-color: ${props => props.theme.color.darken};
   height: 60px;
   align-items: center;
   justify-content: center;
 `;
 
 export const TxtForgetPassword = styled.Text`
-  font-size: 15px;
+  font-size: ${props => props.theme.typo.size.small};
   color: #fff;
 `;
 
 export const TxtBannerCadastrar = styled.Text`
   color: #fff;
-  font-size: 16px;
+  font-size: ${props => props.theme.typo.size.small};
 `;
 
 export const Error = styled.Text`
   color: #fff;
-  font-size: 16px;
+  font-size: ${props => props.theme.typo.size.small};
   padding-bottom: 20px;
   padding-left: 8px;
 `;

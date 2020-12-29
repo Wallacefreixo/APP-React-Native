@@ -14,11 +14,11 @@ export const Button = styled.TouchableOpacity`
 	border-radius: 50px;
 	align-items: center;
 	justify-content: center;
-	background-color: ${ props => props.colored ? '#4898dd' : '#fff' };
+	background-color: ${ props => props.colored ? props.theme.color.lighter : '#fff' };
 `;
 
 export const Content = styled.Text`
-	color: ${ props => props.colored ? '#fff' : '#4898dd' };
-	font-size: 20px;
+	color: ${ props => props.colored ? '#fff' : props.theme.color.lighter };
+	font-size: ${props => props.theme.typo.size.normal};
 	font-weight: bold;
 `;
