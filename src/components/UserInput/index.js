@@ -1,20 +1,20 @@
-import React from 'react-native';
+import React from 'react';
 import { View } from 'react-native';
-import { InputField } from './style.js';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { InputIcon, InputRow, InputField } from './style.js';
 
 function UserInput(props) {
     console.log(props);
     
     return (
-        <View>
-            <Ionicons name="ios-mail" size={20} color="#fff" /> 
+        <InputRow>
+            <InputIcon name={props.iconSet[0]} size={props.iconSet[1]} color={props.iconSet[2]} /> 
             <InputField
                 value={props.value}  
-                placeholder={props.sample}
-                placeholderTextColor={props.sampleColor}
-                onChangeText={props.onChange} />
-        </View>
+                placeholder={props.placeholder}
+                onChangeText={props.onChangeText} />
+            {props.children}
+        </InputRow>
     );
 };
 
