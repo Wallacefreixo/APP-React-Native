@@ -7,6 +7,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { modificaEmail , modificaSenha, autenticaUsuario } from '../../../actions/authActions';
 
 import SafeView from '../../../components/SafeView';
+import UserInput from '../../../components/UserInput';
 import { Title } from '../../../components/Content/style.js';
 import DefaultButton from '../../../components/DefaultButton';
 import { FlexWrapper } from '../../../components/PageWrapper/style.js';
@@ -39,26 +40,20 @@ const SignIn = props => {
       </Icon>
       <FlexWrapper marginTop='40px'>
         <Title>LOGIN</Title>
-        <View>
-          <IconInput name="ios-mail" size={20} color="#fff" /> 
-          <Input value={props.email}
-            placeholder="E-mail" 
-            placeholderTextColor="#fff"
+        <UserInput value={props.email}
+            iconSet={["ios-mail", 20, "#fff"]}
+            placeholder="E-mail"
             onChangeText={email => props.modificaEmail(email)} />
-        </View>
-        <View>
-          <IconInput name="ios-lock" size={20} color="#fff" /> 
-          <Input value={props.senha}
-            placeholder="Senha" 
-            placeholderTextColor="#fff" 
-            onChangeText={senha => props.modificaSenha(senha)} 
-            secureTextEntry={!visiblePassword ? true : false} />
-          <IconVisiblePassword>
-            <TouchableOpacity onPress={() => { setVisiblePassword(!visiblePassword) }}>
-              <Ionicons  name={!visiblePassword ? 'ios-eye-off' : 'ios-eye'} size={20} color="#fff" /> 
-            </TouchableOpacity>
-          </IconVisiblePassword>
-        </View> 
+        <UserInput value={props.email}
+            iconSet={["ios-lock", 20, "#fff"]}
+            placeholder="Senha"
+            onChangeText={senha => props.modificaSenha(senha)}>
+            <IconVisiblePassword>
+              <TouchableOpacity onPress={() => { setVisiblePassword(!visiblePassword) }}>
+                <Ionicons  name={!visiblePassword ? 'ios-eye-off' : 'ios-eye'} size={20} color="#fff" /> 
+              </TouchableOpacity>
+            </IconVisiblePassword>
+        </UserInput>
         <Error>{props.errorLogin}</Error> 
         <DefaultButton colored onPress={() => autenticar() }>Login</DefaultButton>
         <ForgetPassword onPress={() => {  }}>

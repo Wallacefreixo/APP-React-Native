@@ -10,6 +10,7 @@ import SafeView from '../../../components/SafeView';
 import { Title } from '../../../components/Content/style.js';
 import DefaultButton from '../../../components/DefaultButton';
 import { FlexWrapper } from '../../../components/PageWrapper/style.js';
+import UserInput from '../../../components/UserInput';
 
 import { Icon, Input, IconInput, IconVisiblePassword, Error, HaveAccount, TxtHaveAccount } from '../../../components/SignUp/style.js';
 
@@ -29,36 +30,26 @@ const SignUp = props => {
       </Icon>
       <FlexWrapper marginTop='40px'>
         <Title>CADASTRAR</Title>
-        <View>
-          <IconInput name="ios-person" size={20} color="#fff" /> 
-          <Input value={props.nome}  
-                onChangeText={nome => props.modificaNome(nome)} 
-                placeholder="Nome" 
-                placeholderTextColor="#fff" />
-        </View>
+        <UserInput value={props.email}
+            iconSet={["ios-person", 20, "#fff"]}
+            placeholder="Nome"
+            onChangeText={nome => props.modificaNome(nome)} />
         
-        <View>
-          <IconInput name="ios-mail" size={20} color="#fff" /> 
-          <Input value={props.email} 
-            placeholder="E-mail" 
-            placeholderTextColor="#fff"
-            onChangeText={email => props.modificaEmail(email)} 
-          />
-        </View>
-        <View>
-          <IconInput name="ios-lock" size={20} color="#fff" /> 
-          <Input value={props.senha} 
-            placeholder="Senha" 
-            placeholderTextColor="#fff" 
-            onChangeText={senha => props.modificaSenha(senha)} 
-            secureTextEntry={!visiblePassword ? true : false} 
-          />
-          <IconVisiblePassword>
-            <TouchableOpacity onPress={() => { setVisiblePassword(!visiblePassword) }}>
-              <Ionicons  name={!visiblePassword ? 'ios-eye-off' : 'ios-eye'} size={20} color="#fff" /> 
-            </TouchableOpacity>
-          </IconVisiblePassword>
-        </View> 
+        <UserInput value={props.email}
+            iconSet={["ios-mail", 20, "#fff"]}
+            placeholder="E-mail"
+            onChangeText={email => props.modificaEmail(email)} />
+
+        <UserInput value={props.email}
+            iconSet={["ios-lock", 20, "#fff"]}
+            placeholder="Senha"
+            onChangeText={senha => props.modificaSenha(senha)}>
+            <IconVisiblePassword>
+              <TouchableOpacity onPress={() => { setVisiblePassword(!visiblePassword) }}>
+                <Ionicons  name={!visiblePassword ? 'ios-eye-off' : 'ios-eye'} size={20} color="#fff" /> 
+              </TouchableOpacity>
+            </IconVisiblePassword>
+        </UserInput>
         <Error>{props.errorCadastro}</Error> 
         <DefaultButton colored onPress={ () => cadastrar() }>Cadastrar</DefaultButton>
         <HaveAccount onPress={() => { props.navigation.navigate('SignIn') }}>
