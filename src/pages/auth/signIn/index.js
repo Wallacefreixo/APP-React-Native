@@ -8,7 +8,7 @@ import { modificaEmail , modificaSenha, autenticaUsuario } from '../../../action
 
 import SafeView from '../../../components/SafeView';
 import UserInput from '../../../components/UserInput';
-import { Title } from '../../../components/Content/style.js';
+import { Title, Error, Content } from '../../../components/atoms/Content/style.js';
 import DefaultButton from '../../../components/DefaultButton';
 import { FlexWrapper } from '../../../components/PageWrapper/style.js';
 import {
@@ -19,8 +19,7 @@ import {
   ForgetPassword,
   BannerCadastrar,
   TxtForgetPassword,
-  TxtBannerCadastrar,
-  Error
+  TxtBannerCadastrar
 } from '../../../components/SignIn/style.js'
 
 const SignIn = props => {
@@ -39,7 +38,7 @@ const SignIn = props => {
          <Ionicons name="ios-arrow-back" size={40} color="#fff" /> 
       </Icon>
       <FlexWrapper marginTop='40px'>
-        <Title>LOGIN</Title>
+        <Title>Login</Title>
         <UserInput value={props.email}
             iconSet={["ios-mail", 20, "#fff"]}
             placeholder="E-mail"
@@ -57,11 +56,11 @@ const SignIn = props => {
         <Error>{props.errorLogin}</Error> 
         <DefaultButton colored onPress={() => autenticar() }>Login</DefaultButton>
         <ForgetPassword onPress={() => {  }}>
-          <TxtForgetPassword>Esqueceu sua senha?</TxtForgetPassword>
+          <Content description align='right'>Esqueceu sua senha?</Content>
         </ForgetPassword>
       </FlexWrapper>
       <BannerCadastrar onPress={() => { props.navigation.navigate('SignUp') }}>
-        <TxtBannerCadastrar>Não tem uma conta? Cadastre-se</TxtBannerCadastrar>
+        <Content description align='center'>Não tem uma conta? Cadastre-se</Content>
       </BannerCadastrar>
     </SafeView>
   );

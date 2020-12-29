@@ -1,13 +1,14 @@
 import React from 'react';
-import { Container, Button, Content } from './style.js';
+import { Container, Button } from './style.js';
+import { BtnText } from '../atoms/Content/style';
 
 function DefaultButton(props) {
 	return (
 		<Container marginBottom={ props.marginBottom }>
 			<Button colored={ props.colored } onPress={ props.onPress }>
-				<Content colored={ props.colored }>
+				<BtnText colored={ props.colored }>
 					{ props.children }
-				</Content>
+				</BtnText>
 			</Button>
 		</Container>
 	);

@@ -7,12 +7,12 @@ import { connect } from 'react-redux';;
 import { modificaNome, modificaEmail, modificaSenha, cadastraUsuario } from '../../../actions/authActions';
 
 import SafeView from '../../../components/SafeView';
-import { Title } from '../../../components/Content/style.js';
+import { Title, Content, Error } from '../../../components/atoms/Content/style.js';
 import DefaultButton from '../../../components/DefaultButton';
 import { FlexWrapper } from '../../../components/PageWrapper/style.js';
 import UserInput from '../../../components/UserInput';
 
-import { Icon, Input, IconInput, IconVisiblePassword, Error, HaveAccount, TxtHaveAccount } from '../../../components/SignUp/style.js';
+import { Icon, Input, IconInput, IconVisiblePassword, HaveAccount, TxtHaveAccount } from '../../../components/SignUp/style.js';
 
 const SignUp = props => {
 
@@ -29,7 +29,7 @@ const SignUp = props => {
         <Ionicons name="ios-arrow-back" size={40} color="#fff" /> 
       </Icon>
       <FlexWrapper marginTop='40px'>
-        <Title>CADASTRAR</Title>
+        <Title>Cadastrar</Title>
         <UserInput value={props.email}
             iconSet={["ios-person", 20, "#fff"]}
             placeholder="Nome"
@@ -53,7 +53,7 @@ const SignUp = props => {
         <Error>{props.errorCadastro}</Error> 
         <DefaultButton colored onPress={ () => cadastrar() }>Cadastrar</DefaultButton>
         <HaveAccount onPress={() => { props.navigation.navigate('SignIn') }}>
-          <TxtHaveAccount>Já tem uma conta?</TxtHaveAccount>
+          <Content description align='right'>Já tem uma conta?</Content>
         </HaveAccount>
       </FlexWrapper>
     </SafeView>

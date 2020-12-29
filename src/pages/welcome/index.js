@@ -1,6 +1,6 @@
 import React from 'react';
 import SafeView from '../../components/SafeView';
-import { Title, Description} from '../../components/Content/style.js';
+import { Title, Content } from '../../components/atoms/Content/style.js';
 import { CenteredWrapper } from '../../components/PageWrapper/style.js';
 import DefaultButton from '../../components/DefaultButton';
 
@@ -13,10 +13,10 @@ function Welcome({ navigation }) {
               style={styles.logo}
           <View style={styles.content}>
           /> */}
-        <Title>HOBBIES</Title>
-        <Description>Conecte gostos em comuns com pessoas ao redor do mundo</Description>
-        <DefaultButton colored marginBottom onPress={ () =>  navigation.navigate('SignIn')  }>EXPLORAR</DefaultButton>
-        <DefaultButton onPress={ () =>  navigation.navigate('SignUp')  }>COMEÇAR</DefaultButton>
+        <Title big>Hobbies</Title>
+        <Content align='center' description padded='60px'>Conecte gostos em comuns com pessoas ao redor do mundo</Content>
+        <DefaultButton colored marginBottom onPress={ () =>  navigation.navigate('SignIn')  }>Explorar</DefaultButton>
+        <DefaultButton onPress={ () =>  navigation.navigate('SignUp')  }>Começar</DefaultButton>
       </CenteredWrapper>
     </SafeView>
   );
