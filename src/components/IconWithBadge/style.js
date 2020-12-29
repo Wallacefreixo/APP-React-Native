@@ -7,12 +7,6 @@ export const Container = styled.View`
 	margin: 5px;
 `;
 
-export const CounterContent = styled.Text`
-	color: white;
-	font-size: ${props => props.theme.typo.size.tiny};
-	font-weight: bold;
-`;
-
 export const CounterWrapper = styled.View`
 	position: absolute;
 	right: -6px;
