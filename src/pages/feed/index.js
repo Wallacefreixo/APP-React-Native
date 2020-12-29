@@ -6,7 +6,7 @@ function Feed({ navigation }) {
   return (
     <SafeView centered>
       <DefaultButton onPress={() => { navigation.navigate('Welcome') }}>
-        CLIQUE PARA SAIR
+        Clique para sair
       </DefaultButton>
     </SafeView>
   );

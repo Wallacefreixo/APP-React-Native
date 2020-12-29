@@ -1,11 +1,11 @@
 import React from 'react';
 import SafeView from '../../components/SafeView';
-import { Content } from '../../components/Content/style.js';
+import { Content } from '../../components/atoms/Content/style.js';
 
 function Profile({ navigation }) {
   return (
     <SafeView centered colored>
-      <Content>PERFIL</Content>
+      <Content align='center'>Perfil</Content>
     </SafeView>
   );
 };
