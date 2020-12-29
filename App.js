@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import firebase from 'firebase';
 import ReduxThunk from 'redux-thunk'; //transform function async in sync for promises firebase
+import { StatusBar } from 'expo-status-bar';
 
 import Routes from "./src/routes";
 import reducers from './src/reducers';
@@ -25,6 +26,7 @@ export default App = () => {
 
   return(
     <SafeAreaProvider>
+      <StatusBar />
       <Provider store={createStore(reducers, {}, applyMiddleware(ReduxThunk))}>
         <Routes />
       </Provider>
