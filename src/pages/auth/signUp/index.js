@@ -46,7 +46,7 @@ const SignUp = props => {
           />
         </View>
         <View>
-          <IconInput name="ios-lock" size={20} color="#fff" /> 
+          <IconInput name="ios-lock-closed" size={20} color="#fff" /> 
           <Input value={props.senha} 
             placeholder="Senha" 
             placeholderTextColor="#fff" 
