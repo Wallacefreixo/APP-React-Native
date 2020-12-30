@@ -2,7 +2,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import IconWithBadge from './components/IconWithBadge';
+import { IconWithBadge } from './components/molecules/';
 import React from "react";
 
 import Feed from './pages/feed';

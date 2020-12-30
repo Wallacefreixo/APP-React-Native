@@ -7,9 +7,8 @@ import { modificaNome, modificaEmail, modificaSenha, cadastraUsuario } from '../
 
 import SafeView from '../../../components/SafeView';
 import { Title, Content, Error } from '../../../components/atoms/Content/style.js';
-import DefaultButton from '../../../components/DefaultButton';
 import { FlexWrapper } from '../../../components/PageWrapper/style.js';
-import UserInput from '../../../components/molecules/UserInput';
+import { UserInput, DefaultButton } from '../../../components/molecules/';
 
 import { Icon, IconVisiblePassword, HaveAccount } from '../../../components/SignUp/style.js';
 
@@ -50,7 +49,7 @@ const SignUp = props => {
               </TouchableOpacity>
             </IconVisiblePassword>
         </UserInput>
-        <Error>{props.errorCadastro}</Error> 
+        <Error description>{props.errorCadastro}</Error> 
         <DefaultButton colored onPress={ () => cadastrar() }>Cadastrar</DefaultButton>
         <HaveAccount onPress={() => { props.navigation.navigate('SignIn') }}>
           <Content description align='right'>Já tem uma conta?</Content>

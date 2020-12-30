@@ -5,9 +5,8 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { modificaEmail , modificaSenha, autenticaUsuario } from '../../../actions/authActions';
 
 import SafeView from '../../../components/SafeView';
-import UserInput from '../../../components/molecules/UserInput';
+import { UserInput, DefaultButton } from '../../../components/molecules/';
 import { Title, Error, Content } from '../../../components/atoms/Content/style.js';
-import DefaultButton from '../../../components/DefaultButton';
 import { FlexWrapper } from '../../../components/PageWrapper/style.js';
 import {
   Icon,

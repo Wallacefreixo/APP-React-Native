@@ -1,6 +1,6 @@
 import React from 'react';
 import SafeView from '../../components/SafeView';
-import DefaultButton from '../../components/DefaultButton';
+import { DefaultButton } from '../../components/molecules/';
 
 function Feed({ navigation }) {
   return (

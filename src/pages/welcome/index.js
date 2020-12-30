@@ -2,7 +2,7 @@ import React from 'react';
 import SafeView from '../../components/SafeView';
 import { Title, Content } from '../../components/atoms/Content/style.js';
 import { CenteredWrapper } from '../../components/PageWrapper/style.js';
-import DefaultButton from '../../components/DefaultButton';
+import { DefaultButton } from '../../components/molecules/';
 
 function Welcome({ navigation }) {
   return (
