@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, CounterWrapper } from './style.js';
-import { CounterNumber } from '../atoms/Content/style';
+import { CounterNumber } from '../../atoms/Content/style';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 function IconWithBadge({ name, badgeCount, color, size }) {
@@ -10,7 +10,7 @@ function IconWithBadge({ name, badgeCount, color, size }) {
 
 			{badgeCount > 0 && (
 				<CounterWrapper>
-					<CounterNumber>
+					<CounterNumber align='center'>
 						{badgeCount}
 					</CounterNumber>
 				</CounterWrapper>

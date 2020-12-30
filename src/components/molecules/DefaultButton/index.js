@@ -1,6 +1,7 @@
 import React from 'react';
-import { Container, Button } from './style.js';
-import { BtnText } from '../atoms/Content/style';
+import { Button } from './style.js';
+import { BtnText } from '../../atoms/Content/style';
+import { Container } from '../../atoms/Container/style';
 
 function DefaultButton(props) {
 	return (
