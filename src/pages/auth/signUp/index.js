@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import { View } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { connect } from 'react-redux';;
@@ -10,9 +9,9 @@ import SafeView from '../../../components/SafeView';
 import { Title, Content, Error } from '../../../components/atoms/Content/style.js';
 import DefaultButton from '../../../components/DefaultButton';
 import { FlexWrapper } from '../../../components/PageWrapper/style.js';
-import UserInput from '../../../components/UserInput';
+import UserInput from '../../../components/molecules/UserInput';
 
-import { Icon, Input, IconInput, IconVisiblePassword, HaveAccount, TxtHaveAccount } from '../../../components/SignUp/style.js';
+import { Icon, IconVisiblePassword, HaveAccount } from '../../../components/SignUp/style.js';
 
 const SignUp = props => {
 
@@ -30,7 +29,7 @@ const SignUp = props => {
       </Icon>
       <FlexWrapper marginTop='40px'>
         <Title>Cadastrar</Title>
-        <UserInput value={props.email}
+        <UserInput value={props.nome}
             iconSet={["ios-person", 20, "#fff"]}
             placeholder="Nome"
             onChangeText={nome => props.modificaNome(nome)} />
@@ -40,10 +39,11 @@ const SignUp = props => {
             placeholder="E-mail"
             onChangeText={email => props.modificaEmail(email)} />
 
-        <UserInput value={props.email}
+        <UserInput value={props.senha}
             iconSet={["ios-lock-closed", 20, "#fff"]}
             placeholder="Senha"
-            onChangeText={senha => props.modificaSenha(senha)}>
+            onChangeText={senha => props.modificaSenha(senha)}
+            secureTextEntry={!visiblePassword ? true : false}>
             <IconVisiblePassword>
               <TouchableOpacity onPress={() => { setVisiblePassword(!visiblePassword) }}>
                 <Ionicons  name={!visiblePassword ? 'ios-eye-off' : 'ios-eye'} size={20} color="#fff" /> 

@@ -1,25 +1,19 @@
 import React, { useState } from 'react';
-import { View } from 'react-native';
 import { connect } from 'react-redux';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 import { modificaEmail , modificaSenha, autenticaUsuario } from '../../../actions/authActions';
 
 import SafeView from '../../../components/SafeView';
-import UserInput from '../../../components/UserInput';
+import UserInput from '../../../components/molecules/UserInput';
 import { Title, Error, Content } from '../../../components/atoms/Content/style.js';
 import DefaultButton from '../../../components/DefaultButton';
 import { FlexWrapper } from '../../../components/PageWrapper/style.js';
 import {
-  Input,
-  IconInput,
-  IconVisiblePassword,
   Icon,
   ForgetPassword,
   BannerCadastrar,
-  TxtForgetPassword,
-  TxtBannerCadastrar
+  ShowPass
 } from '../../../components/SignIn/style.js'
 
 const SignIn = props => {
@@ -43,15 +37,14 @@ const SignIn = props => {
             iconSet={["ios-mail", 20, "#fff"]}
             placeholder="E-mail"
             onChangeText={email => props.modificaEmail(email)} />
-        <UserInput value={props.email}
+        <UserInput value={props.senha}
             iconSet={["ios-lock-closed", 20, "#fff"]}
             placeholder="Senha"
-            onChangeText={senha => props.modificaSenha(senha)}>
-            <IconVisiblePassword>
-              <TouchableOpacity onPress={() => { setVisiblePassword(!visiblePassword) }}>
-                <Ionicons  name={!visiblePassword ? 'ios-eye-off' : 'ios-eye'} size={20} color="#fff" /> 
-              </TouchableOpacity>
-            </IconVisiblePassword>
+            onChangeText={senha => props.modificaSenha(senha)}
+            secureTextEntry={!visiblePassword ? true : false}>
+            <ShowPass onPress={() => { setVisiblePassword(!visiblePassword) }}>
+              <Ionicons  name={!visiblePassword ? 'ios-eye-off' : 'ios-eye'} size={20} color="#fff" /> 
+            </ShowPass>
         </UserInput>
         <Error>{props.errorLogin}</Error> 
         <DefaultButton colored onPress={() => autenticar() }>Login</DefaultButton>
