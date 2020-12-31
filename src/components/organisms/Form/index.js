@@ -1,7 +1,7 @@
 import React from 'react';
-import { FlexWrapper } from '../../PageWrapper/style';
-import { UserInput, DefaultButton } from '../../molecules/';
+import { FlexWrapper } from '../../atoms/PageWrapper/style';
 import { Error, Title } from '../../atoms/Content/style';
+import { UserInput, DefaultButton } from '../../molecules/';
 
 function Form(props) {
     const fields = [];

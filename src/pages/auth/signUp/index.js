@@ -4,7 +4,7 @@ import { connect } from 'react-redux';;
 
 import { modificaNome, modificaEmail, modificaSenha, cadastraUsuario } from '../../../actions/authActions';
 
-import SafeView from '../../../components/SafeView';
+import SafeView from '../../../components/atoms/SafeView';
 import { Content } from '../../../components/atoms/Content/style.js';
 import { Form } from '../../../components/organisms/';
 import { Icon, HaveAccount } from '../../../components/SignUp/style.js';

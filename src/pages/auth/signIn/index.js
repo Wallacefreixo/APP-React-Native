@@ -4,7 +4,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 
 import { modificaEmail , modificaSenha, autenticaUsuario } from '../../../actions/authActions';
 
-import SafeView from '../../../components/SafeView';
+import SafeView from '../../../components/atoms/SafeView';
 import { Form } from '../../../components/organisms/';
 import { Content } from '../../../components/atoms/Content/style.js';
 import {

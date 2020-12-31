@@ -1,5 +1,5 @@
 import React from 'react';
-import SafeView from '../../components/SafeView';
+import SafeView from '../../components/atoms/SafeView';
 import { Content } from '../../components/atoms/Content/style.js';
 
 function Message({ navigation }) {

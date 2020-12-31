@@ -1,7 +1,7 @@
 import React from 'react';
-import SafeView from '../../components/SafeView';
+import SafeView from '../../components/atoms/SafeView';
 import { Title, Content } from '../../components/atoms/Content/style.js';
-import { CenteredWrapper } from '../../components/PageWrapper/style.js';
+import { CenteredWrapper } from '../../components/atoms/PageWrapper/style.js';
 import { DefaultButton } from '../../components/molecules/';
 
 function Welcome({ navigation }) {
