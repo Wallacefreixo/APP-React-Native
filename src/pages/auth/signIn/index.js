@@ -5,9 +5,8 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { modificaEmail , modificaSenha, autenticaUsuario } from '../../../actions/authActions';
 
 import SafeView from '../../../components/SafeView';
-import { UserInput, DefaultButton } from '../../../components/molecules/';
-import { Title, Error, Content } from '../../../components/atoms/Content/style.js';
-import { FlexWrapper } from '../../../components/PageWrapper/style.js';
+import { Form } from '../../../components/organisms/';
+import { Content } from '../../../components/atoms/Content/style.js';
 import {
   Icon,
   ForgetPassword,
@@ -30,27 +29,33 @@ const SignIn = props => {
       <Icon onPress={() => {  props.navigation.goBack() }}>
          <Ionicons name="ios-arrow-back" size={40} color="#fff" /> 
       </Icon>
-      <FlexWrapper marginTop='40px'>
-        <Title>Login</Title>
-        <UserInput value={props.email}
-            iconSet={["ios-mail", 20, "#fff"]}
-            placeholder="E-mail"
-            onChangeText={email => props.modificaEmail(email)} />
-        <UserInput value={props.senha}
-            iconSet={["ios-lock-closed", 20, "#fff"]}
-            placeholder="Senha"
-            onChangeText={senha => props.modificaSenha(senha)}
-            secureTextEntry={!visiblePassword ? true : false}>
-            <ShowPass onPress={() => { setVisiblePassword(!visiblePassword) }}>
-              <Ionicons  name={!visiblePassword ? 'ios-eye-off' : 'ios-eye'} size={20} color="#fff" /> 
-            </ShowPass>
-        </UserInput>
-        <Error>{props.errorLogin}</Error> 
-        <DefaultButton colored onPress={() => autenticar() }>Login</DefaultButton>
+      <Form formTitle='Login'
+        fields={[
+            [
+              props.email,
+              ["ios-mail", 20, "#fff"],
+              "E-mail",
+              email => props.modificaEmail(email),
+              false,
+              null
+            ],
+            [
+              props.senha,
+              ["ios-lock-closed", 20, "#fff"],
+              "Senha",
+              senha => props.modificaSenha(senha),
+              !visiblePassword ? true : false,
+              <ShowPass onPress={() => { setVisiblePassword(!visiblePassword) }}>
+                <Ionicons name={!visiblePassword ? 'ios-eye-off' : 'ios-eye'} size={20} color="#fff" /> 
+              </ShowPass>
+            ]
+        ]}
+        errorMessage={props.errorLogin}
+        submit={() => autenticar()}>
         <ForgetPassword onPress={() => {  }}>
           <Content description align='right'>Esqueceu sua senha?</Content>
         </ForgetPassword>
-      </FlexWrapper>
+      </Form>
       <BannerCadastrar onPress={() => { props.navigation.navigate('SignUp') }}>
         <Content description align='center'>Não tem uma conta? Cadastre-se</Content>
       </BannerCadastrar>
