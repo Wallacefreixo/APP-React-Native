@@ -8,17 +8,17 @@ import SafeView from '../../../components/atoms/SafeView';
 import { Form } from '../../../components/organisms/';
 import { Content } from '../../../components/atoms/Content/style.js';
 import {
-  Icon,
-  ForgetPassword,
-  BannerCadastrar,
+  SimpleIcon,
+  SimpleText,
+  FullBox,
   ShowPass
-} from '../../../components/SignIn/style.js'
+} from '../../../components/molecules/DefaultButton/style'
 
 const SignIn = props => {
 
   const [visiblePassword, setVisiblePassword] = useState(false);
 
-  autenticar = () =>{
+  const autenticar = () => {
     props.navigation.navigate('Main') // VERSÃO DESENVOLVIMENTO
     // const { email, senha, navigation } = props
     // props.autenticaUsuario({ email, senha, navigation })
@@ -26,9 +26,9 @@ const SignIn = props => {
   
   return (
     <SafeView colored>
-      <Icon onPress={() => {  props.navigation.goBack() }}>
+      <SimpleIcon onPress={() => {  props.navigation.goBack() }}>
          <Ionicons name="ios-arrow-back" size={40} color="#fff" /> 
-      </Icon>
+      </SimpleIcon>
       <Form formTitle='Login'
         fields={[
             [
@@ -52,13 +52,13 @@ const SignIn = props => {
         ]}
         errorMessage={props.errorLogin}
         submit={() => autenticar()}>
-        <ForgetPassword onPress={() => {  }}>
+        <SimpleText onPress={() => {  }}>
           <Content description align='right'>Esqueceu sua senha?</Content>
-        </ForgetPassword>
+        </SimpleText>
       </Form>
-      <BannerCadastrar onPress={() => { props.navigation.navigate('SignUp') }}>
+      <FullBox onPress={() => { props.navigation.navigate('SignUp') }}>
         <Content description align='center'>Não tem uma conta? Cadastre-se</Content>
-      </BannerCadastrar>
+      </FullBox>
     </SafeView>
   );
 }

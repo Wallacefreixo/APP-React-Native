@@ -7,8 +7,11 @@ import { modificaNome, modificaEmail, modificaSenha, cadastraUsuario } from '../
 import SafeView from '../../../components/atoms/SafeView';
 import { Content } from '../../../components/atoms/Content/style.js';
 import { Form } from '../../../components/organisms/';
-import { Icon, HaveAccount } from '../../../components/SignUp/style.js';
-import { ShowPass } from '../../../components/SignIn/style.js'
+import {
+  SimpleIcon,
+  SimpleText,
+  ShowPass
+} from '../../../components/molecules/DefaultButton/style'
 
 const SignUp = props => {
 
@@ -21,9 +24,9 @@ const SignUp = props => {
 
   return (
     <SafeView colored>
-      <Icon onPress={() => { props.navigation.goBack() }}>
+      <SimpleIcon onPress={() => { props.navigation.goBack() }}>
         <Ionicons name="ios-arrow-back" size={40} color="#fff" /> 
-      </Icon>
+      </SimpleIcon>
       <Form formTitle='Cadastrar'
         fields={[
             [
@@ -55,9 +58,9 @@ const SignUp = props => {
         ]}
         errorMessage={props.errorCadastro}
         submit={() => cadastrar()}>
-        <HaveAccount onPress={() => { props.navigation.navigate('SignIn') }}>
+        <SimpleText onPress={() => { props.navigation.navigate('SignIn') }}>
           <Content description align='right'>Já tem uma conta?</Content>
-        </HaveAccount>
+        </SimpleText>
       </Form>
     </SafeView>
   );
