@@ -1,13 +1,19 @@
 import React from 'react';
-import SafeView from '../../components/atoms/SafeView';
-import { DefaultButton } from '../../components/molecules/';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
-function Feed({ navigation }) {
+import SafeView from '../../components/atoms/SafeView';
+import { Card } from '../../components/organisms/';
+import { SimpleIcon } from '../../components/molecules/DefaultButton/style'
+
+function Feed(props) {
   return (
-    <SafeView centered>
-      <DefaultButton onPress={() => { navigation.navigate('Welcome') }}>
-        Clique para sair
-      </DefaultButton>
+    <SafeView>
+      <SimpleIcon onPress={() => {  props.navigation.goBack() }}>
+         <Ionicons name="ios-funnel-outline" size={40} color="#f00" /> 
+      </SimpleIcon>
+
+      <Card />
+      
     </SafeView>
   );
 };
